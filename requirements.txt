@@ -1,8 +1,0 @@
-boto3
-Flask
-Flask-Caching
-python-dotenv
-requests
-gunicorn
-prometheus-flask-exporter
-prometheus_client
