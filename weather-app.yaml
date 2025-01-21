@@ -43,7 +43,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: flask-app.example.com
+    - host: k8s-nginxgroup-7ed21143b2-75741341.eu-north-1.elb.amazonaws.com
       http:
         paths:
           - path: /
