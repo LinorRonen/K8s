@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: 140023376215.dkr.ecr.eu-north-1.amazonaws.com/weather-application:latest
+          image: linorg/my-flask-app:latest
           ports:
-            - containerPort: 5002
+            - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
@@ -31,7 +31,7 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 80
+      targetPort: 5000
   selector:
     app: flask-app
   type: ClusterIP
@@ -43,7 +43,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: k8s-nginxgroup-7ed21143b2-75741341.eu-north-1.elb.amazonaws.com
+    - host: k8s-nginxgroup-7ed21143b2-75741341.eu-north-1.elb.amazonaws.com  
       http:
         paths:
           - path: /
@@ -52,4 +52,4 @@ spec:
               service:
                 name: flask-service
                 port:
-                  number: 80
+                  number: 80 
