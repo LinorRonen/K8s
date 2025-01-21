@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: 140023376215.dkr.ecr.eu-north-1.amazonaws.com/weather-application
+          image: 140023376215.dkr.ecr.eu-north-1.amazonaws.com/weather-application:110
           ports:
             - containerPort: 5000
 ---
